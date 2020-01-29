@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/ninghao-nest/src",
+  "monorepo": true,
+  "root": "apps/ninghao-nest",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/ninghao-nest/tsconfig.app.json"
+  },
+  "projects": {
+    "ninghao-nest": {
+      "type": "application",
+      "root": "apps/ninghao-nest",
+      "entryFile": "main",
+      "sourceRoot": "apps/ninghao-nest/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ninghao-nest/tsconfig.app.json"
+      }
+    },
+    "nest-1": {
+      "type": "application",
+      "root": "apps/nest-1",
+      "entryFile": "main",
+      "sourceRoot": "apps/nest-1/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest-1/tsconfig.app.json"
+      }
+    }
+  }
 }
