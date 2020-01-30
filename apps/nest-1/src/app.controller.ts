@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { MessagePattern, Payload, EventPattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
 import { from } from 'rxjs';
 
@@ -11,4 +11,9 @@ export class AppController {
   greet(@Payload() data: string){
     return `hello ${data}`;
   }
+
+  @EventPattern('log')
+  log(@Payload() data: string){
+    console.log(`Log event: ${data}`);
+  };
 }
