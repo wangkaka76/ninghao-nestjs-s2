@@ -13,6 +13,13 @@ import { AppService } from './app.service';
         port: 5555,
       },
     },
+    {
+      name: 'REDIS',
+      transport: Transport.REDIS,
+      options: {
+        url: 'redis://localhost:6379',
+      }
+    }
   ]),
 ],
   controllers: [AppController],
